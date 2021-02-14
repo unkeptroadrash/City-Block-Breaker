@@ -136,4 +136,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddle: {fileID: 0}
   velocityX: 0
-  velocityY: 15
+  velocityY: 10

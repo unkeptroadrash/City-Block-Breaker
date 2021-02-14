@@ -2742,6 +2742,10 @@ PrefabInstance:
       propertyPath: paddle
       value: 
       objectReference: {fileID: 722478589}
+    - target: {fileID: 6854120687861953388, guid: 08c469c451eb64e49bc089d4ef99bd29, type: 3}
+      propertyPath: velocityY
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6854120687861953391, guid: 08c469c451eb64e49bc089d4ef99bd29, type: 3}
       propertyPath: m_RootOrder
       value: 5
