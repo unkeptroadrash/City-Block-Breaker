@@ -44,4 +44,10 @@ public class GameStatus : MonoBehaviour
         currentScore += pointsAdded;
         scoreText.text = currentScore.ToString();
     }
+
+    public void gameReset()
+    {
+        gameObject.SetActive(false);
+        Destroy(gameObject);
+    }
 }
