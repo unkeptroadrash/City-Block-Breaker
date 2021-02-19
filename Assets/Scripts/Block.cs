@@ -13,13 +13,30 @@ public class Block : MonoBehaviour
 
     private void Start()
     {
-        level = FindObjectOfType<Level>();
-        level.countBreakableBlocks();
-        status = FindObjectOfType<GameStatus>();
+        countBreakableBlocks();
     }
+
+    private void countBreakableBlocks()
+    {
+        level = FindObjectOfType<Level>();
+        status = FindObjectOfType<GameStatus>();
+        if (tag == "Breakable")
+        {
+            level.countBlocks();
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioSource.PlayClipAtPoint(breakSound, new Vector3(0,0,0));
+        if (tag == "Breakable")
+        {
+            DestroyBlock();
+        }
+    }
+
+    private void DestroyBlock()
+    {
+        AudioSource.PlayClipAtPoint(breakSound, new Vector3(0, 0, 0));
         Destroy(gameObject);
         TriggerBlockVFX();
         level.blockDestroyed();
