@@ -6,6 +6,8 @@ public class Block : MonoBehaviour
 {
     // configuration parameters
     [SerializeField] AudioClip breakSound;
+    [SerializeField] GameObject blockVFX;
+
     Level level;
     GameStatus status;
 
@@ -19,7 +21,14 @@ public class Block : MonoBehaviour
     {
         AudioSource.PlayClipAtPoint(breakSound, new Vector3(0,0,0));
         Destroy(gameObject);
+        TriggerBlockVFX();
         level.blockDestroyed();
         status.AddToScore();
+    }
+
+    private void TriggerBlockVFX()
+    {
+        GameObject sparkles = Instantiate(blockVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 2f);
     }
 }
