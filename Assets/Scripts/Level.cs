@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class Level : MonoBehaviour
 
     [SerializeField] SceneLoader sceneloader;
 
-    private void Start()
+    public void Start()
     {
-        sceneloader = FindObjectOfType<SceneLoader>();   
+        sceneloader = FindObjectOfType<SceneLoader>();
     }
 
     public void countBreakableBlocks()
