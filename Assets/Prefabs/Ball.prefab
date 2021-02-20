@@ -136,9 +136,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   paddle: {fileID: 0}
-  velocityX: 1.8
-  velocityY: 15
-  randomVelocity: 0.8
+  velocityX: 2
+  velocityY: 12
+  randomVelocity: 0.5
 --- !u!82 &3547738145215801011
 AudioSource:
   m_ObjectHideFlags: 0
