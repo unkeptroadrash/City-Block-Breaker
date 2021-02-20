@@ -6,9 +6,10 @@ using TMPro;
 public class GameStatus : MonoBehaviour
 {
     // configuration parameters
-    [Range(0.1f,10f)] [SerializeField] float gameSpeed = 1f;
+    [Range(0.1f, 10f)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsAdded = 20;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] bool isAutoPlayEnabled;
 
 
     // state variables
@@ -17,7 +18,7 @@ public class GameStatus : MonoBehaviour
     void Awake()
     {
         int gameStatusCount = FindObjectsOfType<GameStatus>().Length;
-        if(gameStatusCount > 1)
+        if (gameStatusCount > 1)
         {
             gameObject.SetActive(false);
             Destroy(gameObject);
@@ -49,5 +50,10 @@ public class GameStatus : MonoBehaviour
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
+    }
+
+    public bool IsAutoPlayEnabled()
+    {
+        return isAutoPlayEnabled;
     }
 }
